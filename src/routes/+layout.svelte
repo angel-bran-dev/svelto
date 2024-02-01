@@ -2,8 +2,8 @@
     import "../app.scss";
 </script>
 
-<div class="container is-fluid mt-3">
-    <h1 class="title">Rick and Morty API <i class="fa-solid fa-user"></i></h1>
+<div class="container mx-auto py-6 text-center">
+    <h1 class="text-5xl font-bold font-mono text-green-500 my-5">Rick and Morty API</h1>
 
     <slot></slot>
 </div>
