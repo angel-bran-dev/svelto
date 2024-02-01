@@ -5,5 +5,7 @@ export async function load({ fetch, params }) {
     const res = await fetch(`${api}/character/${params.id}`);
     const data = await res.json();
 
+	console.log(data);
+
     return { character: data };
 }
