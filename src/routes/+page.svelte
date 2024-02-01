@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Rick and Morty API</title>
+</svelte:head>
+
 <script>
 // @ts-nocheck
 import { api } from '$lib/index';
@@ -28,7 +32,6 @@ onMount(() => {
     search_name = $page.url.searchParams.get('name') || '';
     searchCharacter();
 });
-
 </script>
 
 <div class="mt-6 mx-auto flex max-w-md gap-x-4">

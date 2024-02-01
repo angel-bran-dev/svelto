@@ -1,10 +1,16 @@
-<script>
-	import About from '../../../components/About.svelte';
+<svelte:head>
+	<title>{`Character: ${character.name}`}</title>
+</svelte:head>
 
-    /** @type {import('./$types').PageData} */
+<script>
+	/** @type {import('./$types').PageData} */
     export let data;
 
     const { character } = data;
+
+	function history_back() {
+		window.history.back();
+	}
 </script>
 
 <div class="grid min-h-full place-items-center px-6 py-10">
@@ -18,5 +24,7 @@
 		<a href="{`/location/${character.location.url.split('/').pop()}`}" class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">{character.location.name}</a>
     </div>
 
-	<About name={character.name} />
+	<main class="text-center mt-10">
+		<button on:click={history_back} class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mt-3">Atras</button>
+	</main>
 </div>
